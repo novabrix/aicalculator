@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Share Tech Mono', monospace;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+        radial-gradient(circle at top left,#00ff4140,transparent 40%),
+        radial-gradient(circle at bottom right,#00e5ff30,transparent 40%),
+        #050505;
+}
+
+.calculator{
+    width:380px;
+    padding:25px;
+    border-radius:24px;
+    backdrop-filter:blur(15px);
+    background:rgba(15,15,15,0.92);
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.5),
+        0 0 20px rgba(0,255,65,0.15);
+}
+
+.calculator::before{
+    content:"SYSTEM_CALC";
+    display:block;
+    color:#00ff41;
+    margin-bottom:15px;
+    letter-spacing:3px;
+    font-size:.8rem;
+}
+
+.display-container{
+    background:#0a0a0a;
+    border-radius:16px;
+    padding:15px;
+    margin-bottom:20px;
+    border:1px solid rgba(0,255,65,.25);
+}
+
+.history{
+    min-height:24px;
+    text-align:right;
+    color:#888;
+    font-size:1rem;
+    margin-bottom:8px;
+    overflow-x:auto;
+}
+
+.display{
+    min-height:60px;
+    text-align:right;
+    color:#00ff41;
+    font-size:2.5rem;
+    overflow-x:auto;
+    text-shadow:0 0 10px rgba(0,255,65,.6);
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.btn{
+    border:none;
+    padding:18px;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:1.1rem;
+    color:white;
+    background:#1b1b1b;
+    transition:.2s ease;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 6px 15px rgba(0,0,0,.4);
+}
+
+.btn:active{
+    transform:scale(.95);
+}
+
+.operator{
+    background:#132f38;
+    color:#00e5ff;
+}
+
+.clear{
+    background:#3b1420;
+    color:#ff4d79;
+}
+
+.equals{
+    background:linear-gradient(
+        135deg,
+        #00ff41,
+        #00cc66
+    );
+    color:#000;
+    font-weight:bold;
+    grid-row:span 2;
+}
+
+.zero{
+    grid-column:span 2;
+}
+
+.display::-webkit-scrollbar,
+.history::-webkit-scrollbar{
+    height:4px;
+}
+
+.display::-webkit-scrollbar-thumb,
+.history::-webkit-scrollbar-thumb{
+    background:#00ff41;
+    border-radius:10px;
+}
